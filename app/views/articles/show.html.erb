@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+  		<div class="col-sm-8">
+			<h3><p id="notice"><%= notice %></p></h3>
+
+			<ul>
+		        <div class="card">
+		          <div class="card-block">
+		            <h4 class="card-title"><%= @article.title %></h4>
+		            <p class="card-text"><%= Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@article.body).html_safe %></p>
+		          </div>
+		          <div class="card-footer">
+		            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+		            <%= link_to 'Back', articles_path, class: "btn btn-warning" %>
+		          </div>
+		        </div>
+		    </ul>
+		</div>
+	</div>
+</div>
